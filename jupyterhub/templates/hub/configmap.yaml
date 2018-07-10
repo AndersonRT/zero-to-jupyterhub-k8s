@@ -68,7 +68,7 @@ data:
   auth.gitlab.client-secret: {{ .Values.auth.gitlab.clientSecret | quote }}
   auth.gitlab.callback-url: {{ .Values.auth.gitlab.callbackUrl | quote }}
   {{- end }}
-  
+
   {{- if eq .Values.auth.type "mediawiki" }}
   auth.mediawiki.client-id: {{ .Values.auth.mediawiki.clientId | quote }}
   auth.mediawiki.client-secret: {{ .Values.auth.mediawiki.clientSecret | quote }}
@@ -81,7 +81,7 @@ data:
   auth.globus.callback-url: {{ .Values.auth.globus.callbackUrl | quote }}
   auth.globus.identity-provider: {{ .Values.auth.globus.identityProvider | quote }}
   {{- end }}
-  
+
   {{- if eq .Values.auth.type "lti" }}
   auth.lti.consumers: |
     {{- .Values.auth.lti.consumers | toYaml | trimSuffix "\n" | nindent 4 }}
@@ -109,7 +109,7 @@ data:
   auth.ldap.dn.user.search-base: {{ .Values.auth.ldap.dn.user.searchBase | quote }}
   auth.ldap.dn.user.attribute: {{ .Values.auth.ldap.dn.user.attribute | quote }}
   {{- end }}
-  
+
   {{- if eq .Values.auth.type "dummy" }}
   {{- if .Values.auth.dummy.password }}
   auth.dummy.password: {{ .Values.auth.dummy.password | quote }}
@@ -219,14 +219,19 @@ data:
   singleuser.pod-anti-affinity-preferred: |
     {{- $_.podAntiAffinityPreferred | nindent 4 }}
   {{- end }}
-  
+
+  {{- if .Values.scheduling.userScheduler.enabled }}
+  singleuser.scheduler-name: "user-scheduler"
+  {{- end }}
+  {{- if .Values.scheduling.podPriority }}
+  singleuser.priority_class: "jupyterhub-default-priority"
+  {{- end }}
+
+
   {{- /* KubeSpawner */}}
   kubespawner.common-labels: |
     {{- $_ := merge (dict "heritageLabel" "jupyterhub") . }}
     {{- include "jupyterhub.commonLabels" $_ | nindent 4 }}
-  {{- if .Values.scheduling.userScheduler.enabled }}
-  kubespawner.scheduler-name: "user-scheduler"
-  {{- end }}
 
 
   {{- /* Hub */}}
