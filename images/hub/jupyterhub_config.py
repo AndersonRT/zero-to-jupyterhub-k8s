@@ -45,6 +45,10 @@ c.KubeSpawner.start_timeout = get_config('singleuser.start-timeout')
 
 # Use env var for this, since we want hub to restart when this changes
 c.KubeSpawner.image_spec = os.environ['SINGLEUSER_IMAGE']
+c.KubeSpawner.extra_labels = get_config('singleuser.extra-labels', {})
+c.KubeSpawner.extra_labels.update({
+    "hub.jupyter.org/pod-kind": "user"
+})
 c.KubeSpawner.storage_extra_labels = get_config('singleuser.storage-extra-labels', {})
 c.KubeSpawner.storage_extra_labels.update({
     "hub.jupyter.org/storage-kind": "user"
@@ -53,8 +57,6 @@ c.KubeSpawner.storage_extra_labels.update({
 c.KubeSpawner.image_pull_policy = get_config('singleuser.image-pull-policy')
 
 c.KubeSpawner.events_enabled = get_config('singleuser.events', False)
-
-c.KubeSpawner.extra_labels = get_config('singleuser.extra-labels', {})
 
 c.KubeSpawner.uid = get_config('singleuser.uid')
 c.KubeSpawner.fs_gid = get_config('singleuser.fs-gid')
