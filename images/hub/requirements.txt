@@ -11,4 +11,4 @@ globus_sdk[jwt]==1.2.1
 oauthenticator==0.7.2
 cryptography==2.0.3
 https://github.com/jupyterhub/ldapauthenticator/archive/718eb59.tar.gz
-https://github.com/consideratio/kubespawner/archive/c1c39dd.tar.gz
+https://github.com/consideratio/kubespawner/archive/83d9836.tar.gz
