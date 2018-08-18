@@ -4,7 +4,7 @@ hub:
     ports:
       nodePort:
   baseUrl: /
-  cookieSecret:
+  cookieSecret: '7cbbd6fa593aee9c44fca583de88d6d682a95a6b2a48d6755e14f811c3255b9f'
   publicURL:
   uid: 1000
   fsGid: 1000
