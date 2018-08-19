@@ -181,8 +181,8 @@ singleuser:
       volumeNameTemplate: volume-{username}{servername}
       storageAccessModes: [ReadWriteOnce]
   image:
-    name: jupyterhub/k8s-singleuser-sample
-    tag: c7f70f9
+    name: jupyterhub/singleuser
+    tag: 0.9
     pullPolicy: IfNotPresent
   startTimeout: 300
   cpu:
