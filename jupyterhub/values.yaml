@@ -182,8 +182,8 @@ singleuser:
       volumeNameTemplate: volume-{username}{servername}
       storageAccessModes: [ReadWriteOnce]
   image:
-    name: rtanderson/basic-nb
-    tag: v0.2
+    name: jupyter/scipy-notebook
+    tag: c7fb6660d096
     pullPolicy: IfNotPresent
   startTimeout: 300
   cpu:
