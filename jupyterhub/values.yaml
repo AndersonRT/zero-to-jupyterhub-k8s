@@ -182,7 +182,7 @@ singleuser:
       volumeNameTemplate: volume-{username}{servername}
       storageAccessModes: [ReadWriteOnce]
   image:
-    name: randerson/basic_notebook
+    name: rtanderson/basic_notebook
     tag: latest
     pullPolicy: IfNotPresent
   startTimeout: 300
