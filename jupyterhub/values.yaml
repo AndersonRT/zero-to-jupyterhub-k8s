@@ -161,7 +161,8 @@ singleuser:
   events: false
   extraLabels: {}
   extraEnv:
-    GRANT_SUDO: "yes"
+    GRANT_SUDO: 'yes'
+    CHOWN_HOME: 'yes'
   lifecycleHooks:
   initContainers:
   nodeSelector: {}
