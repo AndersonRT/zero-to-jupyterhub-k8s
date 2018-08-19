@@ -181,7 +181,7 @@ singleuser:
       volumeNameTemplate: volume-{username}{servername}
       storageAccessModes: [ReadWriteOnce]
   image:
-    name: docker pull rtanderson/basic-nb
+    name: rtanderson/basic-nb
     tag: latest
     pullPolicy: IfNotPresent
   startTimeout: 300
