@@ -18,7 +18,7 @@ hub:
     # This is required for upgrading to work
     rollingUpdate:
   db:
-    type: sqlite-pvc
+    type: sqlite-memory
     upgrade:
     pvc:
       annotations: {}
