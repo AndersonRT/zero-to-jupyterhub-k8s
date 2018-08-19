@@ -182,8 +182,8 @@ singleuser:
       volumeNameTemplate: volume-{username}{servername}
       storageAccessModes: [ReadWriteOnce]
   image:
-    name: jupyter/scipy-notebook
-    tag: c7fb6660d096
+    name: randerson/basic_notebook
+    tag: latest
     pullPolicy: IfNotPresent
   startTimeout: 300
   cpu:
@@ -223,7 +223,7 @@ ingress:
 
 
 cull:
-  enabled: true
+  enabled: false
   users: false
   timeout: 3600
   every: 600
@@ -236,4 +236,4 @@ cull:
 
 
 debug:
-  enabled: false
+  enabled: true
