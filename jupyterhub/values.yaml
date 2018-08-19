@@ -171,7 +171,7 @@ singleuser:
   serviceAccountName:
   schedulerStrategy:
   storage:
-    type: dynamic
+    type: none
     extraVolumes: []
     extraVolumeMounts: []
     static:
