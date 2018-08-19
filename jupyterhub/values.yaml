@@ -124,9 +124,11 @@ auth:
   type: dummy
   whitelist:
     users:
+      - admin
   admin:
     access: true
     users:
+      - admin
   dummy:
     password:
   ldap:
