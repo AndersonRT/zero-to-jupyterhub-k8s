@@ -185,8 +185,8 @@ singleuser:
       volumeNameTemplate: volume-{username}{servername}
       storageAccessModes: [ReadWriteOnce]
   image:
-    name: rtanderson/basic_notebook
-    tag: latest
+    name: jupyterhub/singleuser
+    tag: 1.0
     pullPolicy: IfNotPresent
   startTimeout: 300
   cpu:
