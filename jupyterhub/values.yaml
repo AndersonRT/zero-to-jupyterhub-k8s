@@ -121,7 +121,7 @@ proxy:
 
 
 auth:
-  type: ldap
+  type: dummy
   whitelist:
     users:
       - admin
